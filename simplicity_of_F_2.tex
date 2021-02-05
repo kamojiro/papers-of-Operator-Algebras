@@ -1,0 +1,66 @@
+\section{Simplicity of the C*-algebra associated with the free group on two generators}
+\cite{powers1975simplicity}
+\begin{theorem}\label{presimple}
+  For any $x \in C_r^*(\mathbb{F}_2)_{sa}$ and $\varepsilon > 0$,
+  there exist an integer $n$,
+  elements $g_i \in \mathbb{F}_2$ and $t_i > 0$ for $i = 1, \ldots, n$ with $\sum t_i = 1$
+  s.t.
+  \begin{align*}
+    \left\| \tau (x) I - \sum_{i=1}^n t_i \lambda_{g_i} x \lambda_{g_i^{-1}} \right\| < \varepsilon
+  \end{align*}
+\end{theorem}
+
+\begin{theorem}\label{simple}
+  $C_r^*(\mathbb{F}_2)$ is simple.
+\end{theorem}
+
+At first, we prove theorem \ref{simple} from theorem \ref{presimple}
+
+\begin{proof}
+  $C_r^*(\mathbb{F}_2)$ has a faithful tracial state.
+\end{proof}
+
+\begin{lemma}
+  Suppose $x = \sum_i \{\alpha_i \lambda_{g_i} + \overline{\alpha_i} \lambda_{g_i^{-1}}\} \in \C [\mathbb{F}_2]$,
+  where $g_i \neq e$.
+  Then, there exists $h_i \in \mathbb{F}_2$ s.t.
+  \begin{align*}
+    \left\| \frac{1}{20} \sum_{i=1}^{20} \lambda_{h_i} x \lambda_{h_i^{-1}} \right\| < \frac{1}{20} \|x\|.
+  \end{align*}
+\end{lemma}
+
+\begin{proof}
+  There exist a integer $k$ s.t. for any $i$, $b^k g_i b^{-k}$ begins and ends a non-zero power of $b$.
+  For $r = 1, \cdots 20$, $h_r = a^r b^k$.
+  Let $K_r$ be a closed subspace of $L^2(\mathbb{F}_2)$ s.t. $f(g) = 0$ unless $g$ begins $a^r$.
+  $\lambda_{h_r g_i h_r^{-1}}$ maps $K_r^{\perp}$ to $K_r$.
+  So, $\lambda_{h_r g_i h_r^{-1}} x \lambda_{h_r g_i h_r^{-1}}$ maps $K_r^{/perp}$ to $K_r$.
+  Let $P_r$ be a orthogonal projection to $K_r$.
+  Note $P_r P_s = \delta_{rs}P_r$, so they are orthoginal. 
+  Let $B = \frac{1}{20} \sum_{i=1}^{20} \lambda_{h_i} x \lambda_{h_i^{-1}}$. 
+  Suppose $f \in H$ and $\|f\| = 1$.
+  \begin{align*}
+    \sum_{r=1}^{20} \|P_rf\| \leq \|f\| = 1.
+  \end{align*}
+  There exist a $p$ s.t. $\|P_p f\| \leq \frac{1}{20}$.
+  \begin{align*}
+    |\<f, Bf\>| & \leq \frac{1}{20} \sum_{r=1}^{20} |\<f, \lambda_{h_i} x \lambda_{h_i^{-1}} f\>|\\
+    &\leq \frac{19}{20} \|x\| + \frac{1}{20}|\<f, \lambda_{h_i} x \lambda_{h_i^{-1}} f\>|.
+  \end{align*}
+  Since $\lambda_{h_p g_i h_p^{-1}}$ maps $K_p^{\perp}$ to $K_p$,
+  \begin{align*}
+    |\<f, \lambda_{h_p} x \lambda_{h_p^{-1}} f\>| &\leq ||x|| \{ \| P_p f\|^2 + 2\|P_p f\| \|(1-P_p)f\|\}\\
+    &\leq \frac{1}{20} + 2 \frac{1}{\sqrt{20}}\cdot 1 < \frac{1}{2}.     
+  \end{align*}
+  So, we have
+  \begin{align*}
+    |\<f, Bf\>| \leq \frac{19}{20} \|x\| + \frac{1}{40}\|x\| = \frac{39}{40} \|x\|.
+  \end{align*}
+  Since $\| B \| = \sup_{\|f\|=1}\<f,Bf\>$, this completes the proof of the lemma.
+\end{proof}
+
+\begin{proof}[proof of theorem \ref{presimple}]
+  This theorem follows from the previous lemma and finite dimensional approximation.
+\end{proof}
+
+This proof apply to the uniqueness of a tracial state.
